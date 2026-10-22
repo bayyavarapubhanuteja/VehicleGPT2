@@ -1,0 +1,16 @@
+streamlit>=1.36
+pandas>=2.0
+numpy>=1.24
+plotly>=5.18
+psutil>=5.9
+argon2-cffi>=23.1
+fpdf2>=2.7
+python-can>=4.3
+cantools>=39.0
+pytest>=7.4
+# On-device language model runtime (CPU). Prebuilt x86/macOS wheels:
+#   pip install llama-cpp-python==0.3.2 --only-binary=:all: --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+# On ARM (Pi/Graviton) build natively: CMAKE_ARGS="-DGGML_NATIVE=ON" pip install llama-cpp-python==0.3.2
+llama-cpp-python==0.3.2
+# Only needed once, online, to fetch model files (scripts/fetch_models.py):
+huggingface_hub>=0.24

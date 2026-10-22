@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-10-20T14:29:02",
+  "platform": "macOS-26.6.2-x86_64-i386-64bit",
+  "machine": "x86_64",
+  "cpu": "i386",
+  "budget": {
+    "inference_threads": 2,
+    "memory_cap": "not enforceable on this OS (measured instead)",
+    "mem_gb": 2.0
+  },
+  "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+  "model_status": "ready",
+  "app_start_s": 0.99,
+  "model_load_s": 5.05,
+  "query_latency_ms": {
+    "median": 344.5,
+    "p95": 429,
+    "max": 624
+  },
+  "share_under_2s": 1.0,
+  "optional_explanation_ms": 12464,
+  "peak_rss_mb": 1463,
+  "within_memory_budget": true,
+  "per_query": [
+    {
+      "q": "Why has my driving range reduced over the last two weeks?",
+      "intent": "range_change",
+      "routed_by": "rules+llm",
+      "supported": true,
+      "median_ms": 351,
+      "max_ms": 570
+    },
+    {
+      "q": "When did fuel efficiency show the largest drop?",
+      "intent": "largest_drop",
+      "routed_by": "rules+llm",
+      "supported": true,
+      "median_ms": 384,
+      "max_ms": 531
+    },
+    {
+      "q": "Show all ADAS disengagement events from yesterday.",
+      "intent": "adas_events",
+      "routed_by": "rules+llm",
+      "supported": false,
+      "median_ms": 247,
+      "max_ms": 470
+    },
+    {
+      "q": "What happened before the battery overheating warning?",
+      "intent": "before_warning",
+      "routed_by": "rules+llm",
+      "supported": true,
+      "median_ms": 268,
+      "max_ms": 473
+    },
+    {
+      "q": "Compare energy consumption between city and highway driving.",
+      "intent": "city_highway",
+      "routed_by": "rules",
+      "supported": true,
+      "median_ms": 309,
+      "max_ms": 454
+    },
+    {
+      "q": "Is the car using more juice than it usually does?",
+      "intent": "consumption_normal",
+      "routed_by": "llm",
+      "supported": true,
+      "median_ms": 405,
+      "max_ms": 606
+    },
+    {
+      "q": "Did the lane assist give up on me yesterday?",
+      "intent": "adas_events",
+      "routed_by": "llm",
+      "supported": false,
+      "median_ms": 249,
+      "max_ms": 425
+    },
+    {
+      "q": "Which diagnostic warnings occurred repeatedly?",
+      "intent": "repeated_dtc",
+      "routed_by": "rules+llm",
+      "supported": true,
+      "median_ms": 429,
+      "max_ms": 549
+    },
+    {
+      "q": "How hot did the motor get on Sep 19?",
+      "intent": "metric_stat",
+      "routed_by": "llm",
+      "supported": true,
+      "median_ms": 500,
+      "max_ms": 624
+    },
+    {
+      "q": "Show unusual events from yesterday.",
+      "intent": "unusual_events",
+      "routed_by": "rules+llm",
+      "supported": true,
+      "median_ms": 338,
+      "max_ms": 450
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-10-20T13:43:50",
+  "conditions": {
+    "python": "3.11.9",
+    "platform": "macOS-26.6.2-x86_64-i386-64bit",
+    "machine": "x86_64",
+    "processor": "i386",
+    "cpu_count": 16,
+    "reps_per_query": 20
+  },
+  "cold_start_ms": {
+    "dataset_generation": 5748.7,
+    "detection": 1138.3
+  },
+  "dataset": {
+    "telemetry_rows": 3006,
+    "dtc_rows": 8,
+    "vehicles": [
+      {
+        "vehicle_id": "SYN-EV-001",
+        "telemetry_rows": 3006,
+        "dtc_rows": 8
+      },
+      {
+        "vehicle_id": "SYN-EV-002",
+        "telemetry_rows": 3024,
+        "dtc_rows": 3
+      },
+      {
+        "vehicle_id": "SYN-EV-003",
+        "telemetry_rows": 2597,
+        "dtc_rows": 1
+      }
+    ],
+    "validation": {
+      "implausible_flagged": 49,
+      "missing_soc": 6
+    },
+    "seed": 42
+  },
+  "db_query_7d_ms": {
+    "median": 35.53,
+    "p95": 36.6
+  },
+  "query_latency_deterministic": {
+    "per_query": {
+      "Why did my driving range decrease over the last seven days?": {
+        "median_ms": 236.9,
+        "p95_ms": 261.1,
+        "intent": "range_change",
+        "expected": "range_change"
+      },
+      "What happened before the battery temperature warning?": {
+        "median_ms": 70.2,
+        "p95_ms": 70.9,
+        "intent": "before_warning",
+        "expected": "before_warning"
+      },
+      "Show unusual events from yesterday.": {
+        "median_ms": 28.5,
+        "p95_ms": 29.4,
+        "intent": "unusual_events",
+        "expected": "unusual_events"
+      },
+      "Compare this week's energy consumption with last week.": {
+        "median_ms": 194.6,
+        "p95_ms": 198.2,
+        "intent": "compare_energy",
+        "expected": "compare_energy"
+      },
+      "Which diagnostic warnings occurred repeatedly?": {
+        "median_ms": 49.9,
+        "p95_ms": 50.9,
+        "intent": "repeated_dtc",
+        "expected": "repeated_dtc"
+      },
+      "What was the highest motor temperature on Sep 19?": {
+        "median_ms": 27.7,
+        "p95_ms": 28.4,
+        "intent": "metric_stat",
+        "expected": "metric_stat"
+      },
+      "What was the average battery temperature last 3 days?": {
+        "median_ms": 44.5,
+        "p95_ms": 45.0,
+        "intent": "metric_stat",
+        "expected": "metric_stat"
+      },
+      "How far did I drive last week?": {
+        "median_ms": 45.9,
+        "p95_ms": 46.6,
+        "intent": "distance",
+        "expected": "distance"
+      },
+      "What is the brake pad wear?": {
+        "median_ms": 0.1,
+        "p95_ms": 0.1,
+        "intent": "unsupported",
+        "expected": "unsupported"
+      }
+    },
+    "median_of_medians_ms": 45.9,
+    "max_median_ms": 236.9,
+    "intent_accuracy": "9/9"
+  },
+  "memory": {
+    "python_heap_peak_mb": 4.7,
+    "process_rss_start_mb": 154.2,
+    "process_rss_end_mb": 113.8
+  },
+  "llm": {
+    "backend": "deterministic-fallback",
+    "model": null,
+    "available": false,
+    "detail": "No local model available \u2014 GGUF model not found at /Users/apple/Desktop/VehicleGPT2/models/model.gguf; Ollama not reachable at http://127.0.0.1:11434 (URLError)",
+    "adapter_init_ms": 5.2,
+    "note": "No local model available on this machine \u2014 LLM latency/memory NOT measured."
+  },
+  "detection_eval": {
+    "per_seed": [
+      {
+        "seed": 42,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "alerts_scored": 9,
+        "missed": [],
+        "false_positives": 0
+      },
+      {
+        "seed": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "alerts_scored": 9,
+        "missed": [],
+        "false_positives": 0
+      },
+      {
+        "seed": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "alerts_scored": 9,
+        "missed": [],
+        "false_positives": 0
+      },
+      {
+        "seed": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "alerts_scored": 9,
+        "missed": [],
+        "false_positives": 0
+      },
+      {
+        "seed": 4,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "alerts_scored": 10,
+        "missed": [],
+        "false_positives": 0
+      },
+      {
+        "seed": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "alerts_scored": 9,
+        "missed": [],
+        "false_positives": 0
+      }
+    ],
+    "mean_precision": 1.0,
+    "mean_recall": 1.0,
+    "mean_f1": 1.0,
+    "caveat": "Rules were designed with knowledge of the injected scenarios (seed 42); other seeds change noise only. Scores indicate rule correctness on synthetic data, not real-world accuracy."
+  },
+  "fleet_eval": {
+    "precision": 0.95,
+    "recall": 0.947,
+    "f1": 0.949,
+    "missed": [
+      "GT2-HWY-1"
+    ],
+    "events": 19,
+    "alerts_scored": 20
+  },
+  "tests": "140 passed in 27.53s",
+  "targets_measured": {
+    "<2 s common-query latency (deterministic path)": true,
+    "~2 GB RAM (process RSS, no LLM loaded)": true
+  }
+}

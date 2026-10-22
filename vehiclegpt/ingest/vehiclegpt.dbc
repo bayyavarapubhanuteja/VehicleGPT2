@@ -1,0 +1,33 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: BMS MCU BCM ADAS GW
+
+BO_ 257 BMS_Status: 8 BMS
+ SG_ BMS_SOC : 0|10@1+ (0.1,0) [0|100] "%" GW
+ SG_ BMS_PackTemp : 10|10@1+ (0.2,-40) [-40|164.6] "degC" GW
+ SG_ BMS_PackPower : 20|16@1- (0.01,0) [-327.68|327.67] "kW" GW
+ SG_ BMS_ChargeState : 36|2@1+ (1,0) [0|3] "" GW
+
+BO_ 258 MCU_Status: 8 MCU
+ SG_ MCU_VehicleSpeed : 0|16@1+ (0.01,0) [0|655.35] "km/h" GW
+ SG_ MCU_MotorTemp : 16|10@1+ (0.2,-40) [-40|164.6] "degC" GW
+ SG_ MCU_Odometer : 26|30@1+ (0.01,0) [0|10737418.23] "km" GW
+
+BO_ 259 BCM_Env: 8 BCM
+ SG_ BCM_AmbientTemp : 0|10@1+ (0.1,-50) [-50|52.3] "degC" GW
+ SG_ BCM_TirePressureMin : 10|10@1+ (0.5,0) [0|511.5] "kPa" GW
+
+BO_ 2147484161 ADAS_Status_FD: 16 ADAS
+ SG_ ADAS_Feature : 0|4@1+ (1,0) [0|15] "" GW
+ SG_ ADAS_State : 4|4@1+ (1,0) [0|15] "" GW
+ SG_ ADAS_DisengageReason : 8|8@1+ (1,0) [0|255] "" GW
+ SG_ ADAS_CameraBlockage : 16|8@1+ (1,0) [0|100] "%" GW
+
+VAL_ 257 BMS_ChargeState 0 "idle" 1 "driving" 2 "ac_charging" 3 "dc_charging" ;
+VAL_ 2147484161 ADAS_Feature 0 "none" 1 "ACC" 2 "LKA" ;
+VAL_ 2147484161 ADAS_State 0 "off" 1 "standby" 2 "active" 3 "disengaged" ;
+VAL_ 2147484161 ADAS_DisengageReason 0 "none" 1 "driver_override" 2 "lane_markings_lost" 3 "sensor_blocked" 4 "system_limit" ;

@@ -1,0 +1,22 @@
+# systemd unit for an in-vehicle Linux/AAOS-guest deployment (resource-capped, no outbound network)
+[Unit]
+Description=VehicleGPT on-device assistant
+After=network.target
+
+[Service]
+User=vgpt
+WorkingDirectory=/opt/vehiclegpt
+Environment=VEHICLEGPT_ENV=production VEHICLEGPT_LLM_THREADS=2 VEHICLEGPT_NET_PROBE=0
+ExecStart=/opt/vehiclegpt/.venv/bin/python -m streamlit run app.py --server.port 8502 --server.address 127.0.0.1
+CPUAffinity=2 3
+CPUQuota=200%
+MemoryMax=2G
+IPAddressDeny=any
+IPAddressAllow=localhost
+NoNewPrivileges=yes
+ProtectSystem=strict
+ReadWritePaths=/opt/vehiclegpt/data
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

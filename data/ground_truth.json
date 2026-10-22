@@ -1,0 +1,140 @@
+{
+  "note": "Labelled injected scenarios in the synthetic dataset. Events without vehicle_id refer to SYN-EV-001.",
+  "events": [
+    {
+      "id": "GT-ENERGY-HWY",
+      "category": "energy",
+      "start": "2026-09-11T00:00:00",
+      "end": "2026-09-12T00:00:00"
+    },
+    {
+      "id": "GT-BATT-HOT",
+      "category": "battery_temp",
+      "start": "2026-09-11T13:00:00",
+      "end": "2026-09-11T14:30:00"
+    },
+    {
+      "id": "GT-GAP",
+      "category": "missing_data",
+      "start": "2026-09-08T02:50:00",
+      "end": "2026-09-08T06:10:00"
+    },
+    {
+      "id": "GT-IMPLAUSIBLE",
+      "category": "implausible",
+      "start": "2026-09-13T10:20:00",
+      "end": "2026-09-13T10:21:00"
+    },
+    {
+      "id": "GT-SOC-DROPOUT",
+      "category": "missing_data",
+      "start": "2026-09-14T09:00:00",
+      "end": "2026-09-14T10:00:00"
+    },
+    {
+      "id": "GT-COLD-WEEK",
+      "category": "energy",
+      "start": "2026-09-15T00:00:00",
+      "end": "2026-09-22T00:00:00"
+    },
+    {
+      "id": "GT-TPMS-REPEAT",
+      "category": "repeated_dtc",
+      "start": "2026-09-15T00:00:00",
+      "end": "2026-09-21T00:00:00"
+    },
+    {
+      "id": "GT-MOTOR-RISE",
+      "category": "motor_temp",
+      "start": "2026-09-19T09:50:00",
+      "end": "2026-09-19T11:00:00"
+    }
+  ],
+  "fleet_events": [
+    {
+      "vehicle_id": "SYN-EV-002",
+      "id": "GT2-BATT-1",
+      "category": "battery_temp",
+      "start": "2026-09-05T12:30:00",
+      "end": "2026-09-05T14:00:00"
+    },
+    {
+      "vehicle_id": "SYN-EV-002",
+      "id": "GT2-BATT-2",
+      "category": "battery_temp",
+      "start": "2026-09-10T12:30:00",
+      "end": "2026-09-10T14:00:00"
+    },
+    {
+      "vehicle_id": "SYN-EV-002",
+      "id": "GT2-BATT-3",
+      "category": "battery_temp",
+      "start": "2026-09-17T12:30:00",
+      "end": "2026-09-17T14:00:00"
+    },
+    {
+      "vehicle_id": "SYN-EV-002",
+      "id": "GT2-HWY-1",
+      "category": "energy",
+      "start": "2026-09-05T00:00:00",
+      "end": "2026-09-06T00:00:00"
+    },
+    {
+      "vehicle_id": "SYN-EV-002",
+      "id": "GT2-HWY-2",
+      "category": "energy",
+      "start": "2026-09-10T00:00:00",
+      "end": "2026-09-11T00:00:00"
+    },
+    {
+      "vehicle_id": "SYN-EV-002",
+      "id": "GT2-HWY-3",
+      "category": "energy",
+      "start": "2026-09-17T00:00:00",
+      "end": "2026-09-18T00:00:00"
+    },
+    {
+      "vehicle_id": "SYN-EV-003",
+      "id": "GT3-UNIT-IMPL",
+      "category": "implausible",
+      "start": "2026-09-09T08:00:00",
+      "end": "2026-09-09T16:00:00"
+    },
+    {
+      "vehicle_id": "SYN-EV-003",
+      "id": "GT3-DUP",
+      "category": "duplicate",
+      "start": "2026-09-06T09:00:00",
+      "end": "2026-09-06T09:50:00"
+    },
+    {
+      "vehicle_id": "SYN-EV-003",
+      "id": "GT3-UNIT",
+      "category": "unit",
+      "start": "2026-09-09T08:00:00",
+      "end": "2026-09-09T16:00:00"
+    },
+    {
+      "vehicle_id": "SYN-EV-003",
+      "id": "GT3-FLAT",
+      "category": "flatline",
+      "start": "2026-09-12T08:30:00",
+      "end": "2026-09-12T15:00:00"
+    },
+    {
+      "vehicle_id": "SYN-EV-003",
+      "id": "GT3-STALE",
+      "category": "stale",
+      "start": "2026-09-19T00:00:00",
+      "end": "2026-09-22T00:00:00"
+    }
+  ],
+  "expected_answers": {
+    "Why did my driving range decrease over the last seven days?": "Range estimate fell because average consumption rose in 2026-09-15..21 vs 2026-09-08..14; colder ambient, higher average speed and repeated low-tyre-pressure codes are possible contributors.",
+    "What happened before the battery temperature warning?": "SIM-BMS-T01 at 2026-09-11 13:30 was preceded by a ~1.3 h highway trip (~112 km/h) and a ~110 kW DC fast-charge session starting 13:00 at ~31-36 C ambient.",
+    "Which diagnostic warnings occurred repeatedly?": "SIM-TPMS-L01 (4 occurrences, 2026-09-15..20).",
+    "Show unusual events from yesterday.": "2026-09-20: low tyre pressure code SIM-TPMS-L01 and elevated consumption.",
+    "What is the brake pad wear?": "Not available \u2014 dataset has no brake wear data.",
+    "Which vehicles experienced repeated temperature anomalies?": "SYN-EV-002 (3 battery temperature episodes)."
+  }
+}

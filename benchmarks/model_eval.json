@@ -1,0 +1,410 @@
+{
+  "timestamp": "2026-10-20T14:28:31",
+  "platform": "macOS-26.6.2-x86_64-i386-64bit",
+  "cpu": "i386",
+  "note": "x86_64 host limited to 2 inference threads; ARM A5x will be slower per thread \u2014 see docs/EDGE_DEPLOYMENT.md",
+  "results": [
+    {
+      "model": "Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+      "file_mb": 808,
+      "threads": 2,
+      "ctx": 1024,
+      "load_ms": 5892,
+      "rss_python_app_mb": 157,
+      "rss_after_load_mb": 1168,
+      "rss_peak_mb": 1179,
+      "rss_baseline_mb": 157,
+      "intent_accuracy": {
+        "rules": 0.675,
+        "llm": 0.4,
+        "hybrid": 0.725,
+        "llm_first": 0.75
+      },
+      "classify_ms_median": 361,
+      "classify_ms_p95": 683,
+      "explain_ms_median": 7418,
+      "explain_tokens_per_s": 6.1,
+      "grounding_pass_rate": 0.5,
+      "errors": [
+        {
+          "q": "How come I can't go as far on a full charge lately?",
+          "expected": "range_change",
+          "rules": "unknown",
+          "llm": "unknown",
+          "hybrid": "unknown",
+          "llm_first": "unknown"
+        },
+        {
+          "q": "My battery got too hot earlier, what led up to it?",
+          "expected": "before_warning",
+          "rules": "unknown",
+          "llm": "unknown",
+          "hybrid": "unknown",
+          "llm_first": "unknown"
+        },
+        {
+          "q": "Did the lane assist give up on me yesterday?",
+          "expected": "adas_events",
+          "rules": "unknown",
+          "llm": "unknown",
+          "hybrid": "unknown",
+          "llm_first": "unknown"
+        },
+        {
+          "q": "What does that last warning mean?",
+          "expected": "explain_dtc",
+          "rules": "alerts_summary",
+          "llm": "unknown",
+          "hybrid": "alerts_summary",
+          "llm_first": "alerts_summary"
+        },
+        {
+          "q": "Did the car's driving aids switch off at any point today?",
+          "expected": "adas_events",
+          "rules": "unknown",
+          "llm": "unknown",
+          "hybrid": "unknown",
+          "llm_first": "unknown"
+        },
+        {
+          "q": "Was I spending more energy this week than the week before?",
+          "expected": "compare_energy",
+          "rules": "compare_energy",
+          "llm": "consumption_normal",
+          "hybrid": "compare_energy",
+          "llm_first": "consumption_normal"
+        },
+        {
+          "q": "Has the vehicle stopped sending data or sent junk readings?",
+          "expected": "data_quality",
+          "rules": "unknown",
+          "llm": "unknown",
+          "hybrid": "unknown",
+          "llm_first": "unknown"
+        },
+        {
+          "q": "Which day did I get the fewest km per kWh?",
+          "expected": "largest_drop",
+          "rules": "unknown",
+          "llm": "unknown",
+          "hybrid": "unknown",
+          "llm_first": "unknown"
+        },
+        {
+          "q": "Why is the estimated distance I can travel shrinking?",
+          "expected": "range_change",
+          "rules": "distance",
+          "llm": "unknown",
+          "hybrid": "distance",
+          "llm_first": "distance"
+        },
+        {
+          "q": "Anything out of the ordinary in the last 2 days?",
+          "expected": "unusual_events",
+          "rules": "unknown",
+          "llm": "unknown",
+          "hybrid": "unknown",
+          "llm_first": "unknown"
+        }
+      ],
+      "end_to_end": [
+        {
+          "q": "Why has my driving range reduced over the last two weeks?",
+          "deterministic_ms": 110.9,
+          "llm_explain_ms": 9245.1,
+          "status": "rejected_ungrounded"
+        },
+        {
+          "q": "When did fuel efficiency show the largest drop?",
+          "deterministic_ms": 46.5,
+          "llm_explain_ms": 7238.2,
+          "status": "rejected_ungrounded"
+        },
+        {
+          "q": "Show all ADAS disengagement events from yesterday.",
+          "deterministic_ms": 3.1,
+          "llm_explain_ms": 1817.3,
+          "status": "llm"
+        },
+        {
+          "q": "What happened before the battery overheating warning?",
+          "deterministic_ms": 24.2,
+          "llm_explain_ms": 7597.7,
+          "status": "llm"
+        },
+        {
+          "q": "Compare energy consumption between city and highway driving.",
+          "deterministic_ms": 47.0,
+          "llm_explain_ms": 7037.7,
+          "status": "llm"
+        },
+        {
+          "q": "Why did my driving range decrease this week?",
+          "deterministic_ms": 75.1,
+          "llm_explain_ms": 8987.4,
+          "status": "rejected_ungrounded"
+        }
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "file_mb": 491,
+      "threads": 2,
+      "ctx": 1024,
+      "load_ms": 3416,
+      "rss_python_app_mb": 157,
+      "rss_after_load_mb": 759,
+      "rss_peak_mb": 769,
+      "rss_baseline_mb": 157,
+      "intent_accuracy": {
+        "rules": 0.675,
+        "llm": 0.425,
+        "hybrid": 0.75,
+        "llm_first": 0.6
+      },
+      "classify_ms_median": 234,
+      "classify_ms_p95": 394,
+      "explain_ms_median": 4143,
+      "explain_tokens_per_s": 9.7,
+      "grounding_pass_rate": 0.5,
+      "errors": [
+        {
+          "q": "What happened before the battery overheating warning?",
+          "expected": "before_warning",
+          "rules": "before_warning",
+          "llm": "unusual_events",
+          "hybrid": "before_warning",
+          "llm_first": "unusual_events"
+        },
+        {
+          "q": "Compare this week's energy consumption with last week.",
+          "expected": "compare_energy",
+          "rules": "compare_energy",
+          "llm": "consumption_normal",
+          "hybrid": "compare_energy",
+          "llm_first": "consumption_normal"
+        },
+        {
+          "q": "What was the average battery temperature last 3 days?",
+          "expected": "metric_stat",
+          "rules": "metric_stat",
+          "llm": "latest_dtcs",
+          "hybrid": "metric_stat",
+          "llm_first": "latest_dtcs"
+        },
+        {
+          "q": "How come I can't go as far on a full charge lately?",
+          "expected": "range_change",
+          "rules": "unknown",
+          "llm": "consumption_normal",
+          "hybrid": "consumption_normal",
+          "llm_first": "consumption_normal"
+        },
+        {
+          "q": "My battery got too hot earlier, what led up to it?",
+          "expected": "before_warning",
+          "rules": "unknown",
+          "llm": "unusual_events",
+          "hybrid": "unusual_events",
+          "llm_first": "unusual_events"
+        },
+        {
+          "q": "Did the lane assist give up on me yesterday?",
+          "expected": "adas_events",
+          "rules": "unknown",
+          "llm": "largest_drop",
+          "hybrid": "largest_drop",
+          "llm_first": "largest_drop"
+        },
+        {
+          "q": "Which day was my efficiency the worst?",
+          "expected": "largest_drop",
+          "rules": "compare_energy",
+          "llm": "latest_dtcs",
+          "hybrid": "compare_energy",
+          "llm_first": "latest_dtcs"
+        },
+        {
+          "q": "Any trouble codes that keep coming back?",
+          "expected": "repeated_dtc",
+          "rules": "alerts_summary",
+          "llm": "consumption_normal",
+          "hybrid": "alerts_summary",
+          "llm_first": "consumption_normal"
+        },
+        {
+          "q": "How many kilometres did I cover last week?",
+          "expected": "distance",
+          "rules": "distance",
+          "llm": "latest_dtcs",
+          "hybrid": "distance",
+          "llm_first": "latest_dtcs"
+        },
+        {
+          "q": "The car went into a fault earlier, what was going on just before?",
+          "expected": "before_warning",
+          "rules": "before_warning",
+          "llm": "unusual_events",
+          "hybrid": "before_warning",
+          "llm_first": "unusual_events"
+        },
+        {
+          "q": "Was I spending more energy this week than the week before?",
+          "expected": "compare_energy",
+          "rules": "compare_energy",
+          "llm": "consumption_normal",
+          "hybrid": "compare_energy",
+          "llm_first": "consumption_normal"
+        },
+        {
+          "q": "Has the vehicle stopped sending data or sent junk readings?",
+          "expected": "data_quality",
+          "rules": "unknown",
+          "llm": "alerts_summary",
+          "hybrid": "alerts_summary",
+          "llm_first": "alerts_summary"
+        },
+        {
+          "q": "Which day did I get the fewest km per kWh?",
+          "expected": "largest_drop",
+          "rules": "unknown",
+          "llm": "latest_dtcs",
+          "hybrid": "latest_dtcs",
+          "llm_first": "latest_dtcs"
+        },
+        {
+          "q": "Why is the estimated distance I can travel shrinking?",
+          "expected": "range_change",
+          "rules": "distance",
+          "llm": "distance",
+          "hybrid": "distance",
+          "llm_first": "distance"
+        },
+        {
+          "q": "Anything out of the ordinary in the last 2 days?",
+          "expected": "unusual_events",
+          "rules": "unknown",
+          "llm": "unknown",
+          "hybrid": "unknown",
+          "llm_first": "unknown"
+        },
+        {
+          "q": "What's the lowest tyre pressure recorded last week?",
+          "expected": "metric_stat",
+          "rules": "metric_stat",
+          "llm": "latest_dtcs",
+          "hybrid": "metric_stat",
+          "llm_first": "latest_dtcs"
+        }
+      ],
+      "end_to_end": [
+        {
+          "q": "Why has my driving range reduced over the last two weeks?",
+          "deterministic_ms": 118.6,
+          "llm_explain_ms": 5441.7,
+          "status": "rejected_ungrounded"
+        },
+        {
+          "q": "When did fuel efficiency show the largest drop?",
+          "deterministic_ms": 47.0,
+          "llm_explain_ms": 4212.8,
+          "status": "rejected_ungrounded"
+        },
+        {
+          "q": "Show all ADAS disengagement events from yesterday.",
+          "deterministic_ms": 3.0,
+          "llm_explain_ms": 898.1,
+          "status": "llm"
+        },
+        {
+          "q": "What happened before the battery overheating warning?",
+          "deterministic_ms": 24.8,
+          "llm_explain_ms": 3588.6,
+          "status": "llm"
+        },
+        {
+          "q": "Compare energy consumption between city and highway driving.",
+          "deterministic_ms": 47.9,
+          "llm_explain_ms": 4072.6,
+          "status": "llm"
+        },
+        {
+          "q": "Why did my driving range decrease this week?",
+          "deterministic_ms": 77.4,
+          "llm_explain_ms": 5025.9,
+          "status": "rejected_ungrounded"
+        }
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "file_mb": 1117,
+      "threads": 2,
+      "ctx": 1024,
+      "load_ms": 5990,
+      "rss_python_app_mb": 157,
+      "rss_after_load_mb": 1449,
+      "rss_peak_mb": 1458,
+      "rss_baseline_mb": 156,
+      "intent_accuracy": {
+        "rules": 0.675,
+        "llm": 0.95,
+        "hybrid": 0.875,
+        "llm_first": 0.975
+      },
+      "classify_ms_median": 469,
+      "classify_ms_p95": 668,
+      "explain_ms_median": 10118,
+      "explain_tokens_per_s": 4.4,
+      "grounding_pass_rate": 0.5,
+      "errors": [
+        {
+          "q": "Tell me a joke about cars",
+          "expected": "unknown",
+          "rules": "unknown",
+          "llm": "range_change",
+          "hybrid": "range_change",
+          "llm_first": "range_change"
+        }
+      ],
+      "end_to_end": [
+        {
+          "q": "Why has my driving range reduced over the last two weeks?",
+          "deterministic_ms": 112.5,
+          "llm_explain_ms": 12331.9,
+          "status": "rejected_ungrounded"
+        },
+        {
+          "q": "When did fuel efficiency show the largest drop?",
+          "deterministic_ms": 47.6,
+          "llm_explain_ms": 9898.3,
+          "status": "rejected_ungrounded"
+        },
+        {
+          "q": "Show all ADAS disengagement events from yesterday.",
+          "deterministic_ms": 3.1,
+          "llm_explain_ms": 2063.4,
+          "status": "llm"
+        },
+        {
+          "q": "What happened before the battery overheating warning?",
+          "deterministic_ms": 25.2,
+          "llm_explain_ms": 10337.5,
+          "status": "llm"
+        },
+        {
+          "q": "Compare energy consumption between city and highway driving.",
+          "deterministic_ms": 45.7,
+          "llm_explain_ms": 9346.9,
+          "status": "llm"
+        },
+        {
+          "q": "Why did my driving range decrease this week?",
+          "deterministic_ms": 76.5,
+          "llm_explain_ms": 11567.6,
+          "status": "rejected_ungrounded"
+        }
+      ]
+    }
+  ]
+}
